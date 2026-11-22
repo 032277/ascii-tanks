@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  background: #111;
+  color: #ddd;
+  font-family: "Courier New", monospace;
+  font-size: 18px;
+}
+
+h1 {
+  text-align: center;
+  color: #4f4;
+  margin: 20px 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+#hud {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+#hud b { color: #fff; }
+
+#board-wrap {
+  position: relative;
+  border: 3px solid #4f4;
+}
+
+/* keep in sync with COLS and ROWS in game.js */
+#board {
+  display: grid;
+  grid-template-columns: repeat(21, 44px);
+  grid-template-rows: repeat(13, 44px);
+  background: #000;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.wall { background: #555; color: #999; }
+.brick { background: #842; color: #c84; }
+.player { color: #4f4; }
+.enemy { color: #f44; }
+.bullet { color: #ff0; }
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-size: 22px;
+}
+#overlay h2 { margin: 0; font-size: 42px; color: #4f4; }
+.hidden { display: none !important; }
+.hint { color: #777; font-size: 16px; margin: 0; }
+
+input, button {
+  font-family: inherit;
+  font-size: 20px;
+  padding: 6px 12px;
+  background: #000;
+  color: #4f4;
+  border: 2px solid #4f4;
+}
+button { cursor: pointer; }
+button:hover { background: #4f4; color: #000; }
+
+aside {
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.panel {
+  border: 2px solid #333;
+  padding: 10px 16px;
+}
+.panel h2 { margin: 0 0 8px; font-size: 20px; color: #fff; }
+span.player, span.enemy { font-weight: bold; }
+
+#highscores { min-height: 110px; margin: 0 0 10px; }
+#highscores .empty { list-style: none; margin-left: -20px; color: #777; }
+#clear-btn { font-size: 14px; padding: 2px 8px; }

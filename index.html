@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tanks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>TANKS</h1>
+
+  <main>
+    <section>
+      <div id="hud">
+        <span>Level: <b id="hud-level">1</b></span>
+        <span>Score: <b id="hud-score">0</b></span>
+        <span>Lives: <b id="hud-lives">3</b></span>
+        <span>Enemies left: <b id="hud-enemies">0</b></span>
+      </div>
+
+      <div id="board-wrap">
+        <div id="board"></div>
+
+        <!-- shared by the start, level cleared and game over screens -->
+        <div id="overlay">
+          <h2 id="overlay-title">TANKS</h2>
+          <p id="overlay-text">Destroy all the enemy tanks!</p>
+          <label id="name-row">Your name: <input id="name-input" maxlength="12"></label>
+          <button id="overlay-btn">Start game</button>
+          <p class="hint">(or press Enter)</p>
+        </div>
+      </div>
+    </section>
+
+    <aside>
+      <div class="panel">
+        <h2>About</h2>
+        <p>
+          You are the <span class="player">green tank</span>. Destroy every
+          <span class="enemy">red tank</span> on the map to clear the level.
+          Each new level has more enemies. You have 3 lives.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h2>High scores</h2>
+        <ol id="highscores"></ol>
+        <button id="clear-btn">Clear scores</button>
+      </div>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
